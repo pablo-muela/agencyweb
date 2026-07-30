@@ -1,44 +1,71 @@
 @import "tailwindcss";
 
-/* Configuración de tema personalizado para agencyweb */
 @theme {
-  --color-brand-primary: #0055ff;
-  --color-brand-dark: #0a0f1d;
+  --color-obsidian: #03071e;
+  --color-maroon: #370617;
+  --color-wine: #6a040f;
+  --color-crimson-dark: #9d0208;
+  --color-red-deep: #d00000;
+  --color-vermilion: #dc2f02;
+  --color-orange-red: #e85d04;
+  --color-amber-orange: #f48c06;
+  --color-amber: #faa307;
+  --color-gold: #ffba08;
+
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-/* Estilos base del sitio */
+:root {
+  --background: #03071e;
+  --foreground: #f8fafc;
+}
+
 body {
-  background-color: var(--color-brand-dark);
-  color: #f3f4f6;
+  background-color: var(--color-obsidian);
+  color: var(--foreground);
   font-family: var(--font-sans);
   overflow-x: hidden;
 }
 
-/* Glassmorphism Utilities */
+/* Glassmorphism Panels */
 .glass-panel {
-  background: rgba(17, 24, 39, 0.7);
+  background: rgba(55, 6, 23, 0.6);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(244, 140, 6, 0.15);
 }
 
 .glass-card {
-  background: rgba(30, 41, 59, 0.5);
+  background: rgba(106, 4, 15, 0.25);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: all 0.3s ease;
+  border: 1px solid rgba(250, 163, 7, 0.12);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glass-card:hover {
-  border-color: rgba(0, 85, 255, 0.4);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px -10px rgba(0, 85, 255, 0.2);
+  border-color: rgba(232, 93, 4, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px -10px rgba(220, 47, 2, 0.3);
 }
 
-.text-gradient {
-  background: linear-gradient(135deg, #0055ff 0%, #a855f7 100%);
+/* Fiery Gradient Animation */
+.text-fiery-gradient {
+  background: linear-gradient(135deg, #ffba08 0%, #f48c06 35%, #dc2f02 70%, #d00000 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.bg-fiery-gradient {
+  background: linear-gradient(135deg, #d00000 0%, #dc2f02 40%, #e85d04 70%, #f48c06 100%);
+}
+
+.btn-fiery {
+  background: linear-gradient(135deg, #dc2f02 0%, #e85d04 50%, #f48c06 100%);
+  transition: all 0.3s ease;
+}
+
+.btn-fiery:hover {
+  box-shadow: 0 8px 25px -4px rgba(232, 93, 4, 0.5);
+  transform: scale(1.02);
 }
